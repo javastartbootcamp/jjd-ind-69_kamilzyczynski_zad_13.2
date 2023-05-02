@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class MainTest {
     private Main main = new Main();
 
     @Test
-    void shouldWorkFrom1To5() {
+    void shouldWorkFrom1To5() throws IOException {
         // given
         Scanner scanner = provideInput("1", "2", "3", "4", "5", "-2");
 
@@ -34,7 +35,7 @@ public class MainTest {
     }
 
     @Test
-    void shouldWorkFrom1To3() {
+    void shouldWorkFrom1To3() throws IOException {
         // given
         Scanner scanner = provideInput("1", "2", "3", "-12");
 
@@ -52,7 +53,7 @@ public class MainTest {
     }
 
     @Test
-    void shouldWorkFromFor4824() {
+    void shouldWorkFromFor4824() throws IOException {
         // given
         Scanner scanner = provideInput("4", "8", "2", "4", "-1");
 

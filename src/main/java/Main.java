@@ -24,13 +24,9 @@ public class Main {
                 correctNumber = false;
             }
         }
-        if (numbers != null) {
-            ListUtils.reverseList(numbers);
-            ListUtils.printSum(numbers);
-            ListUtils.printMin(numbers);
-            ListUtils.printMax(numbers);
-        } else {
-            System.err.println("Lista jest pusta");
-        }
+        ListUtils.reverseList(numbers);
+        ListUtils.printSum(numbers);
+        ListUtils.printMin(numbers);
+        ListUtils.printMax(numbers);
     }
 }
