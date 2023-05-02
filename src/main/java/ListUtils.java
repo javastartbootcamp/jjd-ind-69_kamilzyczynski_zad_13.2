@@ -1,11 +1,7 @@
-import java.io.IOException;
 import java.util.List;
 
 public class ListUtils {
-    public static void reverseList(List<Integer> numbers) throws IOException {
-        if (numbers.size() < 1) {
-            throw new IOException("Nie wprowadzono ani jednej prawidłowej liczby");
-        }
+    public static void reverseList(List<Integer> numbers) {
         for (int i = 0; i < numbers.size(); i++) {
             if (i == numbers.size() - 1) {
                 System.out.println(numbers.get(numbers.size() - 1 - i));
@@ -13,19 +9,12 @@ public class ListUtils {
                 System.out.print(numbers.get(numbers.size() - 1 - i)  + ", ");
             }
         }
-
     }
 
-    public static void printSum(List<Integer> numbers) throws IOException {
-        if (numbers.size() < 1) {
-            throw new IOException("Nie wprowadzono ani jednej prawidłowej liczby");
-        }
+    public static void printSum(List<Integer> numbers) {
         int sum = 0;
-        for (Integer number : numbers) {
-            sum += number;
-        }
-
         for (int i = 0; i < numbers.size(); i++) {
+            sum += numbers.get(i);
             if (i == numbers.size() - 1) {
                 System.out.print(numbers.get(i) + " = ");
             } else {
@@ -35,12 +24,8 @@ public class ListUtils {
         System.out.println(sum);
     }
 
-    public static void printMax(List<Integer> numbers) throws IOException {
-        if (numbers.size() < 1) {
-            throw new IOException("Nie wprowadzono ani jednej prawidłowej liczby");
-        }
-        int max = Integer.MIN_VALUE;
-
+    public static void printMax(List<Integer> numbers) {
+        int max = numbers.get(0);
         for (Integer number : numbers) {
             if (number > max) {
                 max = number;
@@ -49,12 +34,8 @@ public class ListUtils {
         System.out.println("Największa liczba w liście to " + max);
     }
 
-    public static void printMin(List<Integer> numbers) throws IOException {
-        if (numbers.size() < 1) {
-            throw new IOException("Nie wprowadzono ani jednej prawidłowej liczby");
-        }
-        int min = Integer.MAX_VALUE;
-
+    public static void printMin(List<Integer> numbers) {
+        int min = numbers.get(0);
         for (Integer number : numbers) {
             if (number < min) {
                 min = number;

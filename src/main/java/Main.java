@@ -1,16 +1,15 @@
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Main main = new Main();
         main.run(new Scanner(System.in));
     }
 
-    public void run(Scanner scanner) throws IOException {
+    public void run(Scanner scanner) {
         boolean correctNumber = true;
         List<Integer> numbers = new ArrayList<>();
 
@@ -24,9 +23,13 @@ public class Main {
                 correctNumber = false;
             }
         }
-        ListUtils.reverseList(numbers);
-        ListUtils.printSum(numbers);
-        ListUtils.printMin(numbers);
-        ListUtils.printMax(numbers);
+        if (!numbers.isEmpty()) {
+            ListUtils.reverseList(numbers);
+            ListUtils.printSum(numbers);
+            ListUtils.printMin(numbers);
+            ListUtils.printMax(numbers);
+        } else {
+            System.out.println("Nie wprowadzono ani jednej prawidłowej liczby");
+        }
     }
 }
